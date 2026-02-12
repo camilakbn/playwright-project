@@ -1,5 +1,5 @@
 import test from "@playwright/test";
-import { HomeActions } from "../page_object/actions/HomeActions";
+import { ElementosActions } from "../page_object/actions/ElementosActions";
 import { LoginActions } from "../page_object/actions/LoginActions";
 
 // Primeiro de tudo: Fazer os fluxos
@@ -9,16 +9,19 @@ import { LoginActions } from "../page_object/actions/LoginActions";
 // Seria uma boa: Pesquisar um jeito reusável de manejar os dados (dica: criar um util class para guardar os dados em json)
 // Seria uma boa: Pesquisar um jeito de guardar as credenciais de forma segura
 
-test('Login', async ({ page, }) => {
+test('Login', async ({ page }) => {
     await page.goto('/');
     /*
-        HomeActions vai ser minha classe de ações
+        Actions vai ser minha classe de ações
         Page vai ser o parametro que eu preciso passar
         Os metodos clicar em login e inserir email do usuario estão dentro de home actions
         O parametro email, do tipo string, tem que ser passado para o inserir email do usuario
     */
-    const homeActions = new HomeActions(page); // PESQUISAR SOBRE FIXTURES
+    const elementosActions = new ElementosActions(page); // PESQUISAR SOBRE FIXTURES
     const loginActions = new LoginActions(page);
-    await homeActions.clicarEmLoginLink();
-    await loginActions.inserirEmailDoUsuario('abcde@email.com');
+    
+    await elementosActions.clicarEmLoginLink();
+    await loginActions.inserirEmailDoUsuario('mailtestes312@gmail.com');
+    await loginActions.inserirSenhaDoUsuario('mailTestes312');
+    await loginActions.clicarNoBotaoDeLogin();
 })
