@@ -1,13 +1,8 @@
-import test from "@playwright/test";
-import { ElementosActions } from "../page_object/actions/ElementosActions";
-import { ShoppingActions } from "../page_object/actions/ShoppingActions";
+import { test } from "../page_object/fixtures/Fixtures";
 
 test.describe('Sem login', async () => {
-    test('Adicionar item ao carrinho e estimar a entrega', async ({ page }) => {
+    test('Adicionar item ao carrinho e estimar a entrega', async ({page, elementosActions, shoppingActions}) => {
         await page.goto('/');
-
-        const elementosActions = new ElementosActions(page);
-        const shoppingActions = new ShoppingActions(page);
 
         await shoppingActions.pesquisarItem('computer');
         await shoppingActions.adicionarAoCarrinho();
@@ -15,4 +10,3 @@ test.describe('Sem login', async () => {
         await shoppingActions.estimarEntrega();
     })
 })
-
