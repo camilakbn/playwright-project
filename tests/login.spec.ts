@@ -1,7 +1,6 @@
 import { test } from "../page_object/fixtures/Fixtures";
 
-test('Login', async ({page, elementosActions, loginActions}) => {
-    await page.goto('/');
+test('Login', async ({elementosActions, loginActions}) => {
     
     await elementosActions.clicarEmLoginLink();
     await loginActions.inserirEmailDoUsuario('mailtestes312@gmail.com');
