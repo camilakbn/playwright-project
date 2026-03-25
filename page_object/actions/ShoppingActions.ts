@@ -33,4 +33,12 @@ export class ShoppingActions extends ShoppingPage {
         await expect(this.estimateShipping).toBeVisible();
         await this.estimateShipping.click();
     }
+
+    public async adicionarAWishlist (){
+        await expect(this.wishlishItem).toBeVisible();
+        await this.wishlishItem.click();
+        await expect(this.addToWishlishButton).toBeVisible();
+        await this.addToWishlishButton.click();
+        await expect(this.notificationWishlish).toBeVisible();
+    }
 }

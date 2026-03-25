@@ -17,4 +17,9 @@ export class ElementosActions extends ElementosGerais {
         await expect(this.shoppingCartLink).toBeVisible();
         await this.shoppingCartLink.click();
     }
+
+    public async clicarEmWishlish(){
+        await expect(this.wishlist).toBeVisible();
+        await this.wishlist.click();
+    }
 }
