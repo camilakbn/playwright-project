@@ -24,4 +24,12 @@ export class LoginActions extends LoginPage {
         await expect(this.loginButton).toBeVisible();
         await this.loginButton.click();
     }
+
+    public async botaoDeLogout(){
+        await expect(this.logoutButton).toBeVisible();
+    }
+
+    public async mensagemDeErro(){
+        await expect(this.loginErrorMessage).toBeVisible();
+    }
 }
