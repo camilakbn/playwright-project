@@ -41,4 +41,12 @@ export class ShoppingActions extends ShoppingPage {
         await this.addToWishlishButton.click();
         await expect(this.notificationWishlish).toBeVisible();
     }
+
+    public async atualizarQuantidadeDoItemNoCarrinho (qty: string) {
+        await expect(this.itemQuantity).toBeVisible();
+        await this.itemQuantity.fill(qty);
+        await expect(this.updateShoppingCart).toBeVisible();
+        await this.updateShoppingCart.click();
+        await expect(this.itemQuantity).toHaveValue(qty);
+    }
 }

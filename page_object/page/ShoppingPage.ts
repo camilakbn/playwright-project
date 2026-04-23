@@ -13,6 +13,8 @@ export class ShoppingPage extends ElementosGerais {
     protected wishlishItem: Locator;
     protected addToWishlishButton: Locator;
     protected notificationWishlish: Locator;
+    protected itemQuantity: Locator;
+    protected updateShoppingCart: Locator;
 
     constructor(page: Page) {
         super(page);
@@ -28,5 +30,7 @@ export class ShoppingPage extends ElementosGerais {
         this.wishlishItem = page.locator('[class="product-title"] a[href="/health"]');
         this.addToWishlishButton = page.locator('[type="button"][value="Add to wishlist"]');
         this.notificationWishlish = page.locator('#bar-notification p.content');
+        this.itemQuantity = page.locator('[class="qty nobr"] [type="text"]');
+        this.updateShoppingCart = page.locator('[class="common-buttons"] [name="updatecart"]');
     }
 }

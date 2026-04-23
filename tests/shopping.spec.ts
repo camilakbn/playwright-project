@@ -30,6 +30,16 @@ test.describe('Com login', async () => {
         await shoppingActions.pesquisarItem('book');
         await shoppingActions.adicionarAWishlist();
         await elementosActions.clicarEmWishlish();
+    })
 
+    test('Atualizar a quantidade de itens no carrinho', async({loginActions, elementosActions, shoppingActions}) =>{
+        await elementosActions.clicarEmLoginLink();
+        await loginActions.inserirEmailDoUsuario('mailtestes312@gmail.com');
+        await loginActions.inserirSenhaDoUsuario('mailTestes312');
+        await loginActions.clicarNoBotaoDeLogin();
+        await shoppingActions.pesquisarItem('computer');
+        await shoppingActions.adicionarAoCarrinho();
+        await elementosActions.clicarEmShoppingCart();
+        await shoppingActions.atualizarQuantidadeDoItemNoCarrinho('5');
     })
 })
