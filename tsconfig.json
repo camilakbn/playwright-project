@@ -1,6 +1,0 @@
-{
-  "compilerOptions": {
-    "moduleResolution": "Bundler", // or "Node10", "Node16", "Node20", "NodeNext"
-    "strict": true // Optional, but recommended
-  }
-}
