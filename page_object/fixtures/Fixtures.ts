@@ -5,7 +5,7 @@ import { ShoppingActions } from '../actions/ShoppingActions';
 
 // test.BeforeEach / test.Before
 // Implementar um jeito de realizar actions gerais
-// Fixtures
+// Estudar mais fixtures
 // Pesquisar um jeito reusável de manejar os dados (ex: criar um util class para guardar os dados em json)
 // Pesquisar um jeito de guardar as credenciais de forma segura
 
@@ -18,10 +18,10 @@ type MyFixtures = {
 
 export const test = base.extend<MyFixtures>({
     forEachTest: [async ({ page }, use) => {
-        // This code runs before every test.
+        // This code runs before every test
         await page.goto('/');
         await use();
-    }, { auto: true }], // automatically starts for every test.
+    }, { auto: true }], // automatically starts for every test
 
     elementosActions: async ({page}, use) => {
         await use(new ElementosActions(page));
