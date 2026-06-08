@@ -1,6 +1,6 @@
 import { Locator, Page } from "playwright";
 
-export class ElementosGerais{
+export class GeneralElements{
     protected loginLink: Locator; // protected -> restrição de acesso / loginLink -> nome da variavel / Locator -> tipo da variavel
     protected shoppingCartLink: Locator;
     protected wishlist: Locator;

@@ -1,45 +1,45 @@
 import { test } from "../page_object/fixtures/Fixtures";
 
 test.describe('Sem login', async () => {
-    test('Adicionar item ao carrinho e estimar a entrega', async ({elementosActions, shoppingActions}) => {
+    test('Adicionar item ao carrinho e estimar a entrega', async ({elementsActions, shoppingActions}) => {
 
-        await shoppingActions.pesquisarItem('computer');
-        await shoppingActions.adicionarAoCarrinho();
-        await elementosActions.clicarEmShoppingCart();
-        await shoppingActions.estimarEntrega();
+        await shoppingActions.searchItem('computer');
+        await shoppingActions.addItemToCart();
+        await elementsActions.clickOnShoppingCart();
+        await shoppingActions.estimateItemShipping();
     })
 })
 
 test.describe('Com login', async () => {
-    test('Adicionar item ao carrinho e estimar a entrega', async ({loginActions, elementosActions, shoppingActions}) => {
-        await elementosActions.clicarEmLoginLink();
-        await loginActions.inserirEmailDoUsuario('mailtestes312@gmail.com');
-        await loginActions.inserirSenhaDoUsuario('mailTestes312');
-        await loginActions.clicarNoBotaoDeLogin();
-        await shoppingActions.pesquisarItem('computer');
-        await shoppingActions.adicionarAoCarrinho();
-        await elementosActions.clicarEmShoppingCart();
-        await shoppingActions.estimarEntrega();
+    test('Adicionar item ao carrinho e estimar a entrega', async ({loginActions, elementsActions, shoppingActions}) => {
+        await elementsActions.clickOnLoginLink();
+        await loginActions.insertEmail('mailtestes312@gmail.com');
+        await loginActions.insertPassword('mailTestes312');
+        await loginActions.clickOnLoginButton();
+        await shoppingActions.searchItem('computer');
+        await shoppingActions.addItemToCart();
+        await elementsActions.clickOnShoppingCart();
+        await shoppingActions.estimateItemShipping();
     })
 
-    test('Adicionar o item à wishlist', async ({loginActions, elementosActions, shoppingActions}) => {
-        await elementosActions.clicarEmLoginLink();
-        await loginActions.inserirEmailDoUsuario('mailtestes312@gmail.com');
-        await loginActions.inserirSenhaDoUsuario('mailTestes312');
-        await loginActions.clicarNoBotaoDeLogin();
-        await shoppingActions.pesquisarItem('book');
-        await shoppingActions.adicionarAWishlist();
-        await elementosActions.clicarEmWishlish();
+    test('Adicionar o item à wishlist', async ({loginActions, elementsActions, shoppingActions}) => {
+        await elementsActions.clickOnLoginLink();
+        await loginActions.insertEmail('mailtestes312@gmail.com');
+        await loginActions.insertPassword('mailTestes312');
+        await loginActions.clickOnLoginButton();
+        await shoppingActions.searchItem('book');
+        await shoppingActions.addItemToWishlist();
+        await elementsActions.clickOnWishlish();
     })
 
-    test('Atualizar a quantidade de itens no carrinho', async({loginActions, elementosActions, shoppingActions}) =>{
-        await elementosActions.clicarEmLoginLink();
-        await loginActions.inserirEmailDoUsuario('mailtestes312@gmail.com');
-        await loginActions.inserirSenhaDoUsuario('mailTestes312');
-        await loginActions.clicarNoBotaoDeLogin();
-        await shoppingActions.pesquisarItem('computer');
-        await shoppingActions.adicionarAoCarrinho();
-        await elementosActions.clicarEmShoppingCart();
-        await shoppingActions.atualizarQuantidadeDoItemNoCarrinho('5');
+    test('Atualizar a quantidade de itens no carrinho', async({loginActions, elementsActions, shoppingActions}) =>{
+        await elementsActions.clickOnLoginLink();
+        await loginActions.insertEmail('mailtestes312@gmail.com');
+        await loginActions.insertPassword('mailTestes312');
+        await loginActions.clickOnLoginButton();
+        await shoppingActions.searchItem('computer');
+        await shoppingActions.addItemToCart();
+        await elementsActions.clickOnShoppingCart();
+        await shoppingActions.updateItemQuantityAtCart('5');
     })
 })

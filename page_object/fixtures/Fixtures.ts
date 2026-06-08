@@ -1,5 +1,5 @@
 import {test as base} from '@playwright/test';
-import { ElementosActions } from '../actions/ElementosActions';
+import { ElementsActions } from '../actions/ElementsActions';
 import { LoginActions } from '../actions/LoginActions';
 import { ShoppingActions } from '../actions/ShoppingActions';
 
@@ -10,7 +10,7 @@ import { ShoppingActions } from '../actions/ShoppingActions';
 // Pesquisar um jeito de guardar as credenciais de forma segura
 
 type MyFixtures = {
-    elementosActions: ElementosActions;
+    elementsActions: ElementsActions;
     loginActions: LoginActions;
     shoppingActions: ShoppingActions;
     forEachTest: void;
@@ -21,10 +21,13 @@ export const test = base.extend<MyFixtures>({
         // This code runs before every test
         await page.goto('/');
         await use();
+        // This code runs after every test
+        await page.context().clearCookies();
     }, { auto: true }], // automatically starts for every test
 
-    elementosActions: async ({page}, use) => {
-        await use(new ElementosActions(page));
+
+    elementsActions: async ({page}, use) => {
+        await use(new ElementsActions(page));
     },
 
     loginActions: async ({page}, use) => {

@@ -1,7 +1,7 @@
 import { Locator, Page } from "playwright";
-import { ElementosGerais } from "./ElementosGerais";
+import { GeneralElements } from "./GeneralElements";
 
-export class ShoppingPage extends ElementosGerais {
+export class ShoppingPage extends GeneralElements {
     protected searchBar: Locator;
     protected searchButton: Locator;
     protected searchAdvanced: Locator;

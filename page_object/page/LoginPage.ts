@@ -1,7 +1,7 @@
 import { Locator, Page } from "playwright";
-import { ElementosGerais } from "./ElementosGerais";
+import { GeneralElements } from "./GeneralElements";
 
-export class LoginPage extends ElementosGerais {
+export class LoginPage extends GeneralElements {
     protected emailInput: Locator;
     protected senhaInput: Locator;
     protected loginButton: Locator;

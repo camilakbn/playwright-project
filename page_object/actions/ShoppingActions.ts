@@ -7,7 +7,7 @@ export class ShoppingActions extends ShoppingPage {
         super(page);
     }
 
-    public async pesquisarItem (item: string){
+    public async searchItem (item: string){
         await expect(this.searchBar).toBeVisible();
         await this.searchBar.fill(item);
         await expect(this.searchBar).toHaveValue(item);
@@ -16,14 +16,14 @@ export class ShoppingActions extends ShoppingPage {
         await expect(this.searchAdvanced).toBeVisible();
     }
 
-    public async adicionarAoCarrinho (){
+    public async addItemToCart (){
         await expect(this.wantedItem).toBeVisible();
         await this.wantedItem.click();
         await expect(this.addToCart).toBeVisible();
         await this.addToCart.click();
     }
 
-    public async estimarEntrega () {
+    public async estimateItemShipping () {
         await expect(this.country).toBeVisible();
         await this.country.selectOption('United States');
         await expect(this.country).toHaveValue('1');
@@ -34,7 +34,7 @@ export class ShoppingActions extends ShoppingPage {
         await this.estimateShipping.click();
     }
 
-    public async adicionarAWishlist (){
+    public async addItemToWishlist (){
         await expect(this.wishlishItem).toBeVisible();
         await this.wishlishItem.click();
         await expect(this.addToWishlishButton).toBeVisible();
@@ -42,7 +42,7 @@ export class ShoppingActions extends ShoppingPage {
         await expect(this.notificationWishlish).toBeVisible();
     }
 
-    public async atualizarQuantidadeDoItemNoCarrinho (qty: string) {
+    public async updateItemQuantityAtCart (qty: string) {
         await expect(this.itemQuantity).toBeVisible();
         await this.itemQuantity.fill(qty);
         await expect(this.updateShoppingCart).toBeVisible();
