@@ -34,7 +34,23 @@ export class ShoppingActions extends ShoppingPage {
         await this.estimateShipping.click();
     }
 
-    public async addItemToWishlist (){
+    public async updateItemQuantityAtCart (qty: string) {
+        await expect(this.itemQuantity).toBeVisible();
+        await this.itemQuantity.fill(qty);
+        await expect(this.updateShoppingCart).toBeVisible();
+        await this.updateShoppingCart.click();
+        await expect(this.itemQuantity).toHaveValue(qty);
+    }
+
+    public async deleteItemFromShoppingCart (qty: string) {
+        await expect(this.itemQuantity).toBeVisible();
+        await this.itemQuantity.fill(qty);
+        await expect(this.updateShoppingCart).toBeVisible();
+        await this.updateShoppingCart.click();
+        await expect(this.emptyShoppingCart).toBeVisible();
+    }
+
+    public async addItemToWishlist () {
         await expect(this.wishlishItem).toBeVisible();
         await this.wishlishItem.click();
         await expect(this.addToWishlishButton).toBeVisible();
@@ -42,11 +58,11 @@ export class ShoppingActions extends ShoppingPage {
         await expect(this.notificationWishlish).toBeVisible();
     }
 
-    public async updateItemQuantityAtCart (qty: string) {
-        await expect(this.itemQuantity).toBeVisible();
-        await this.itemQuantity.fill(qty);
-        await expect(this.updateShoppingCart).toBeVisible();
-        await this.updateShoppingCart.click();
-        await expect(this.itemQuantity).toHaveValue(qty);
+    public async removeItemFromWishlist () {
+        await expect(this.removeWishlistButton).toBeVisible();
+        await this.removeWishlistButton.check();
+        await expect(this.updateWishlistButton).toBeVisible();
+        await this.updateWishlistButton.click();
+        await expect(this.wishlistEmptyMessage).toBeVisible();
     }
 }

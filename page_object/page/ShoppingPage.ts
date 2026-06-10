@@ -15,6 +15,11 @@ export class ShoppingPage extends GeneralElements {
     protected notificationWishlish: Locator;
     protected itemQuantity: Locator;
     protected updateShoppingCart: Locator;
+    protected emptyShoppingCart: Locator;
+    protected removeWishlistButton: Locator;
+    protected updateWishlistButton: Locator;
+    protected wishlistEmptyMessage: Locator;
+
 
     constructor(page: Page) {
         super(page);
@@ -32,5 +37,9 @@ export class ShoppingPage extends GeneralElements {
         this.notificationWishlish = page.locator('#bar-notification p.content');
         this.itemQuantity = page.locator('[class="qty nobr"] [type="text"]');
         this.updateShoppingCart = page.locator('[class="common-buttons"] [name="updatecart"]');
+        this.emptyShoppingCart = page.locator('.order-summary-content');
+        this.removeWishlistButton = page.locator('[type="checkbox"][name="removefromcart"]');
+        this.updateWishlistButton = page.locator('[name="updatecart"][type="submit"]');
+        this.wishlistEmptyMessage = page.locator('[class="wishlist-content"]');
     }
 }
