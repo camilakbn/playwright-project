@@ -28,6 +28,14 @@ test.describe('Login', async () => {
         await loginActions.loginErrorMessageVisible();
     })
 
+    test('Wrong email without @', async({elementsActions, loginActions}) => {
+        await elementsActions.clickOnLoginLink();
+        await loginActions.insertEmail('mailtestes312');
+        await loginActions.insertPassword('mailTestes312');
+        await loginActions.clickOnLoginButton();
+        await loginActions.emailValidationErrorVisible();
+    })
+
     test('Wrong credentials', async({elementsActions, loginActions}) => {
         await elementsActions.clickOnLoginLink();
         await loginActions.insertEmail('wrongemail@gmail.com');

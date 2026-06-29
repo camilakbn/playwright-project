@@ -32,4 +32,8 @@ export class LoginActions extends LoginPage {
     public async loginErrorMessageVisible(){
         await expect(this.loginErrorMessage).toBeVisible();
     }
+
+    public async emailValidationErrorVisible(){
+        await expect(this.emailValidationError).toBeVisible();
+    }
 }

@@ -7,6 +7,7 @@ export class LoginPage extends GeneralElements {
     protected loginButton: Locator;
     protected logoutButton: Locator;
     protected loginErrorMessage: Locator;
+    protected emailValidationError: Locator;
 
     constructor(page: Page) {
         super(page);
@@ -15,5 +16,6 @@ export class LoginPage extends GeneralElements {
         this.loginButton = page.locator('.login-button');
         this.logoutButton = page.locator('[class="ico-logout"]');
         this.loginErrorMessage = page.locator('[class="validation-summary-errors"]');
+        this.emailValidationError = page.locator('span[class="field-validation-error"]');
     }
 }
