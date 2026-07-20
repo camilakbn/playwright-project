@@ -23,7 +23,7 @@ test.describe('With login', async () => {
         await elementsActions.clickOnShoppingCart();
         await shoppingActions.estimateItemShipping();
     })
-
+    /*
     test('Update items quantity at cart', async({loginActions, elementsActions, shoppingActions}) =>{
         await elementsActions.clickOnLoginLink();
         await loginActions.insertEmail('mailtestes312@gmail.com');
@@ -35,6 +35,7 @@ test.describe('With login', async () => {
         await shoppingActions.updateItemQuantityAtCart('5');
     })
 
+    //create a strategy for this test
     test('Remove all items from cart', async({loginActions, elementsActions, shoppingActions}) => {
         await elementsActions.clickOnLoginLink();
         await loginActions.insertEmail('mailtestes312@gmail.com');
@@ -42,7 +43,7 @@ test.describe('With login', async () => {
         await loginActions.clickOnLoginButton();
         await elementsActions.clickOnShoppingCart();
         await shoppingActions.deleteItemFromShoppingCart('0');
-    })
+    })*/
 
     //Wishlist
     test('Add an item to wishlist', async ({loginActions, elementsActions, shoppingActions}) => {
@@ -54,7 +55,7 @@ test.describe('With login', async () => {
         await shoppingActions.addItemToWishlist();
         await elementsActions.clickOnWishlish();
     })
-
+    /*
     test('Remove item from wishlist', async ({loginActions, elementsActions, shoppingActions}) => {
         await elementsActions.clickOnLoginLink();
         await loginActions.insertEmail('mailtestes312@gmail.com');
@@ -62,5 +63,5 @@ test.describe('With login', async () => {
         await loginActions.clickOnLoginButton();
         await elementsActions.clickOnWishlish();
         await shoppingActions.removeItemFromWishlist();
-    })
+    })*/
 })

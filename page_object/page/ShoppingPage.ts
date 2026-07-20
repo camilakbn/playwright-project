@@ -29,7 +29,7 @@ export class ShoppingPage extends GeneralElements {
         this.searchAdvanced = page.locator('input#As[type="checkbox"]');
         this.wantedItem = page.locator('[class="product-title"] a[href*="cheap"]');
         this.addToCart = page.locator('.add-to-cart [value="Add to cart"]');
-        this.country = page.locator('.country-input');
+        this.country = page.locator('#CountryId[name="CountryId"]');
         this.state = page.locator('.state-input');
         this.estimateShipping = page.locator('input[name="estimateshipping"]');
         this.wishlishItem = page.locator('[class="product-title"] a[href="/health"]');

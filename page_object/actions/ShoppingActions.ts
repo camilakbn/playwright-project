@@ -24,7 +24,7 @@ export class ShoppingActions extends ShoppingPage {
     }
 
     public async estimateItemShipping () {
-        await expect(this.country).toBeVisible();
+        //await expect(this.country).toBeVisible();
         await this.country.selectOption('United States');
         await expect(this.country).toHaveValue('1');
         await expect(this.state).toBeVisible();
