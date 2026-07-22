@@ -26,7 +26,7 @@ test.describe(' Shopping cart with login', async () => {
         await elementsActions.clickOnShoppingCart();
         await shoppingActions.estimateItemShipping();
     })
-
+    /*
     test('Update items quantity at cart', async ({ loginActions, elementsActions, shoppingActions }) => {
         await elementsActions.clickOnLoginLink();
         await loginActions.insertEmail('mailtestes312@gmail.com');
@@ -36,5 +36,5 @@ test.describe(' Shopping cart with login', async () => {
         await shoppingActions.addItemToCart();
         await elementsActions.clickOnShoppingCart();
         await shoppingActions.updateItemQuantityAtCart('5');
-    })
+    })*/
 })

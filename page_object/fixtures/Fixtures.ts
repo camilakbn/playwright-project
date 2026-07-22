@@ -22,7 +22,7 @@ export const test = base.extend<MyFixtures>({
         await page.goto('/');
         await use();
         // This code runs after every test
-        await page.context().clearCookies();
+        //await page.context().clearCookies();
     }, { auto: true }], // automatically starts for every test
 
 
