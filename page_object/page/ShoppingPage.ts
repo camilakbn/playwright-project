@@ -36,7 +36,7 @@ export class ShoppingPage extends GeneralElements {
         this.wishlishItem = page.locator('[class="product-title"] a[href="/health"]');
         this.addToWishlishButton = page.locator('[type="button"][value="Add to wishlist"]');
         this.notificationWishlish = page.locator('#bar-notification p.content');
-        this.itemQuantity = page.locator('[class="qty-input valid"][type="text"]'); //editar esse locator
+        this.itemQuantity = page.locator('.qty [type="text"]');
         this.updateShoppingCart = page.locator('[type="submit"][name="updatecart"]');
         this.emptyShoppingCart = page.locator('.order-summary-content');
         this.removeWishlistButton = page.locator('[type="checkbox"][name="removefromcart"]');
