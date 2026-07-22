@@ -42,9 +42,11 @@ export class ShoppingActions extends ShoppingPage {
         await expect(this.itemQuantity).toHaveValue(qty);
     }
 
-    public async deleteItemFromShoppingCart (qty: string) {
-        await expect(this.itemQuantity).toBeVisible();
-        await this.itemQuantity.fill(qty);
+    public async deleteItemFromShoppingCart () {
+        const checkboxs = await this.removeCartItem.all();
+        for (const checkbox of checkboxs) {
+        await checkbox.check();
+        }
         await expect(this.updateShoppingCart).toBeVisible();
         await this.updateShoppingCart.click();
         await expect(this.emptyShoppingCart).toBeVisible();
@@ -59,8 +61,10 @@ export class ShoppingActions extends ShoppingPage {
     }
 
     public async removeItemFromWishlist () {
-        await expect(this.removeWishlistButton).toBeVisible();
-        await this.removeWishlistButton.check();
+        const checkboxes = await this.removeWishlistButton.all();
+        for (const checkbox of checkboxes) {
+        await checkbox.check();
+        }
         await expect(this.updateWishlistButton).toBeVisible();
         await this.updateWishlistButton.click();
         await expect(this.wishlistEmptyMessage).toBeVisible();
