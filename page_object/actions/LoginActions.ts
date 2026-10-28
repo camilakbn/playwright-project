@@ -3,7 +3,7 @@ import { LoginPage } from "../page/LoginPage";
 import { expect } from "playwright/test";
 
 export class LoginActions extends LoginPage {
-    constructor(page: Page) {
+    constructor(page: Page) {//test
         super(page);
     }
 
